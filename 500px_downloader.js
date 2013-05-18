@@ -15,7 +15,7 @@ if (rsTest !== -1) {
     
     var get_id = document.getElementById("thephoto").childNodes;
     
-    var get_link = get_id[1].href;		 
+    var get_link = get_id[1].href;
     
     var a = document.createElement('a');
     var div = document.createElement('div');
@@ -29,7 +29,7 @@ if (rsTest !== -1) {
     a.setAttribute('download', '500px.jpg');
     div.setAttribute('class', 'button red');
     div.setAttribute('style', 'margin: 10px auto');
-    div.appendChild(document.createTextNode("Download"));		
+    div.appendChild(document.createTextNode("Download"));
     
     get_id = null;
     get_link = null;
