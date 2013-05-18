@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name       500px Downloader
 // @namespace  http://www.toto.com
-// @version    1.0
+// @version    1.1
 // @description  get image from 500px
 // @match      http://*/*
 // @copyright  2012+, You
@@ -21,8 +21,10 @@ if (rsTest !== -1) {
     var div = document.createElement('div');
     
     a.appendChild(div);
-    document.getElementById('preorder').parentNode.appendChild(a);
-    document.getElementById('preorder').parentNode.setAttribute('style', 'height: 100px');
+    
+    var sp2 = document.getElementById('thephoto');
+    var parentDiv = sp2.parentNode;
+    parentDiv.insertBefore(a,sp2);
     
     //a.setAttribute('class', 'button like');
     a.setAttribute('href', get_link);
