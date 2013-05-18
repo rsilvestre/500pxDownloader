@@ -18,9 +18,7 @@ if (rsTest !== -1) {
     var get_link = get_id[1].href;		 
     
     var a = document.createElement('a');
-    var div = document.createElement('div');	
-    
-    debugger;
+    var div = document.createElement('div');
     
     a.appendChild(div);
     document.getElementById('preorder').parentNode.appendChild(a);
