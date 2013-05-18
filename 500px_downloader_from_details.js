@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name       500px Downloader
+// @name       500px Downloader from detail
 // @namespace  http://www.toto.com
 // @version    1.1
 // @description  get image from 500px
