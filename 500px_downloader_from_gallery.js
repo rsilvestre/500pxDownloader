@@ -27,7 +27,7 @@ function addButton($) {
     for (var i=0, maxV = $toto.length;i<maxV;++i) {
         
         var parentDiv = $($toto[i]).parent();
-        debugger;
+        
         if (($(parentDiv).parent().find('.button')).length == 0) {
             var get_link = ($($toto[i]).attr('src')).replace('3.jpg','4.jpg');
             
