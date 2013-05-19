@@ -10,7 +10,7 @@
 var url = window.location + "";
 
 //var rsTest = url.search('(500px.com/)');
-var pattern = new RegExp("500px.com/(?!(market|photo[^s]|blog|upgrade|settings)).*");
+var pattern = new RegExp("500px.com/(?!(flow|activity|market|photo[^s]|blog|upgrade|settings)).*");
 
 //if (rsTest !== -1) {
 if (pattern.test(url)) {
