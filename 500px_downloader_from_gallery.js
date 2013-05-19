@@ -13,7 +13,7 @@ var rsTest = url.search('(500px.com/)');
 
 if (rsTest !== -1) {
     
-    // @require        http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js
+    // @require http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js
     var $ = unsafeWindow.jQuery;
     $(document).ajaxStop(function() {
         addButton($);
@@ -23,13 +23,15 @@ if (rsTest !== -1) {
 }
 
 function addButton($) {
-    var $toto = $('[class="photo medium"]').find("img");
-    for (var i=0, maxV = $toto.length;i<maxV;++i) {
+    var $aImageContainer = $('[class="photo medium"]');
+    var $image = $aImageContainer.find("img");
+
+    for (var i=0, maxV = $image.length;i<maxV;++i) {
         
-        var parentDiv = $($toto[i]).parent();
+        var parentDiv = $($image[i]).parent();
         
         if (($(parentDiv).parent().find('.button')).length == 0) {
-            var get_link = ($($toto[i]).attr('src')).replace('3.jpg','4.jpg');
+            var get_link = ($($image[i]).attr('src')).replace('3.jpg','4.jpg');
             
             var a = document.createElement('a');
             var div = document.createElement('div');
@@ -40,7 +42,7 @@ function addButton($) {
             
             //a.setAttribute('class', 'button like');
             a.setAttribute('href', get_link);
-            a.setAttribute('download', '500px.jpg');
+            a.setAttribute('download', $($aImageContainer[i]).parent().find('div.title').find('a').html() || '500px.jpg' );
             div.setAttribute('class', 'button red');
             div.setAttribute('style', 'margin: 10px auto');
             div.setAttribute('style', 'padding: 14px');
