@@ -12,14 +12,14 @@ var url = window.location + "";
 var rsTest = url.search('(500px.com/)');
 
 if (rsTest !== -1) {
-    
+
     // @require http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js
     var $ = unsafeWindow.jQuery;
     $(document).ajaxStop(function() {
         addButton($);
     });
     addButton($);
-    
+
 }
 
 function addButton($) {
@@ -27,19 +27,19 @@ function addButton($) {
     var $image = $aImageContainer.find("img");
 
     for (var i=0, maxV = $image.length;i<maxV;++i) {
-        
+
         var parentDiv = $($image[i]).parent();
-        
-        if (($(parentDiv).parent().find('.button')).length == 0) {
+
+        if (($(parentDiv).parent().find('.button')).length === 0) {
             var get_link = ($($image[i]).attr('src')).replace('3.jpg','4.jpg');
-            
+
             var a = document.createElement('a');
             var div = document.createElement('div');
-            
+
             a.appendChild(div);
             //parentDiv.insertBefore(a,sp2);
             $(a).insertBefore(parentDiv);
-            
+
             //a.setAttribute('class', 'button like');
             a.setAttribute('href', get_link);
             a.setAttribute('download', $($aImageContainer[i]).parent().find('div.title').find('a').html() || '500px.jpg' );
@@ -47,7 +47,7 @@ function addButton($) {
             div.setAttribute('style', 'margin: 10px auto');
             div.setAttribute('style', 'padding: 14px');
             div.appendChild(document.createTextNode("Download"));
-            
+
             get_link = null;
             a = null;
             div = null;
